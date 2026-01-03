@@ -1,0 +1,35 @@
+// Да се напише програма која за квадратна матрица внесена од тастатура ќе пресмета:
+//
+// Збирот на елементите под главната дијагонала
+//
+// Збирот на елементите над главната дијагонала
+//
+// И на крај да ги испечати на екран
+
+#include <iostream>
+using namespace std;
+int main() {
+    int a[100][100],n, zbirp=0, zbirn=0;
+    cin>>n;
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<n; j++) {
+            cin>>a[i][j];
+        }
+    }
+    for (int i=1; i<n; i++) {
+        for (int j=0; j<i; j++) {
+            zbirp+=a[i][j];
+        }
+    }
+    for (int i=0; i<n; i++) {
+        for (int j=i+1; j<n; j++) {
+            zbirn+=a[i][j];
+        }
+    }
+
+    cout<<"zbir pod"<<zbirp<<endl;
+    cout<<"zbir nad"<<zbirn<<endl;
+    return 0;
+
+
+}
